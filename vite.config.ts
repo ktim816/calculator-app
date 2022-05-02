@@ -5,7 +5,7 @@ import svgLoader from 'vite-svg-loader';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: '/<REPO>/',
+  base: '/calculator-app/',
   plugins: [vue(), svgLoader()],
   resolve: {
     alias: {
@@ -14,6 +14,13 @@ export default defineConfig({
       '@components': path.resolve(__dirname, 'src/components'),
       '@helpers': path.resolve(__dirname, 'src/helpers'),
       '@styles': path.resolve(__dirname, 'src/styles'),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import './src/styles/mixins';`,
+      },
     },
   },
 });

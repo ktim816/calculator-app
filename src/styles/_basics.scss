@@ -1,6 +1,14 @@
 html,
 body {
-  @apply min-h-screen;
+  @apply min-h-screen bg-theme-1-police-blue;
+
+  @include theme(theme-2) {
+    @apply bg-theme-2-platinum;
+  }
+
+  @include theme(theme-3) {
+    @apply bg-theme-3-eerie-black;
+  }
 }
 
 html {
@@ -16,4 +24,16 @@ html {
 a,
 span {
   @apply inline-block;
+}
+
+h1 {
+  @apply text-3xl text-white;
+
+  @include theme(theme-2) {
+    @apply text-theme-2-dark-charcoal;
+  }
+
+  @include theme(theme-3) {
+    @apply text-theme-3-banana-yellow;
+  }
 }
