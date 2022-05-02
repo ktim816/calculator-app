@@ -52,6 +52,10 @@ button.wrapper {
     @include theme(theme-2) {
       @apply bg-theme-2-platinum text-theme-2-dark-charcoal;
 
+      &:hover {
+        @apply bg-white;
+      }
+
       &::before {
         box-shadow: inset 0px -4px 0px #a79e91;
       }
