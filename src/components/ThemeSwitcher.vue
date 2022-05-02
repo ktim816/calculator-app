@@ -74,7 +74,11 @@ onMounted(() => {
 }
 
 .button {
-  @apply block w-4 h-4 appearance-none bg-theme-1-dark-blue-gray rounded-full opacity-0 cursor-pointer transition-opacity;
+  @apply block w-4 h-4 appearance-none bg-theme-1-dark-blue-gray rounded-full opacity-0 cursor-pointer transition;
+
+  &:hover {
+    @apply opacity-50;
+  }
 
   @include theme(theme-2) {
     @apply bg-theme-2-bright-gray;
@@ -84,20 +88,27 @@ onMounted(() => {
     @apply bg-theme-3-dark-grape;
   }
 
-  &:hover {
-    @apply opacity-50;
-  }
-
-  &--active,
-  &--active:hover {
+  &--active {
     @apply bg-theme-1-persian-red opacity-100;
+
+    &:hover {
+      @apply bg-theme-1-bittersweet opacity-100;
+    }
 
     @include theme(theme-2) {
       @apply bg-theme-2-burnt-orange;
+
+      &:hover {
+        @apply bg-theme-2-mango-tango;
+      }
     }
 
     @include theme(theme-3) {
       @apply bg-theme-3-dark-turquoise;
+
+      &:hover {
+        @apply bg-theme-3-waterspout;
+      }
     }
   }
 }
